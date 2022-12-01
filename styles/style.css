@@ -1,47 +1,95 @@
-@import url(./normalize.css);/*파일 가져오기, 맨 처음에 넣어야 함*/
-/*normalize.css에 body{margin: 0;}이 담겨있기에 가장자리 여백이 사라짐*/
+@import url(./normalize.css);
 @import url(./reset.css);
-
-
-body{
-  /*font setting(pretendard)*/
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  /*body가 기본 여백 8px이어서 가장자리에 여백이 생김. 하지만 위에 import함으로써 없앰.*/
-  background: rgb(248, 248, 230);
-}
-
-/*레이아웃*//*selector 그룹핑*/
-.header, .visual, .main, .slogan, .footer-inner{
-  width: 940px;
+/* 기본 스타일*/
+*,
+*::before,
+::after {
   box-sizing: border-box;
-  margin: 0 auto; /*마치 중앙 정렬이 된 것 같은. 이동한 것이 아니라 크기가 커진 거임*/
-  /*margin: 0 0 0 auto; 마치 오른쪽 정렬이 된 것 같은. 그냥 크기가 커진 거임*/
-  
 }
 
-.header{
-  background: rgb(254, 130, 151);
-  height: 15vh;
-  padding: 0 30px; /*좌 우*/ 
+/* 본문 스타일 */
+body {
+  background: #ffc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 100;
 }
-.visual{
+
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
+  width: 880px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.header {
+  background: pink;
+  padding: 0 30px; /* 숏핸드 표기법 상 우 하 좌(시계방향) */
+  height: 15vh;
+}
+
+/* 비주얼 */
+.visual {
   background: orange;
   height: 10vh;
 }
-.main{
-  background: #7ec581;
+
+/* / 메인 / */
+.main {
+  background: lightgreen;
+  /* border: 3px solid red; */
   height: 50vh;
+  display: flow-root; 
+  /* overflow: hidden; */
+  padding: 0 15px;
 }
-.slogan{
-  background: #4EC5F1;
+
+/* .main::after {
+  content: "";
+  clear: both;
+  display: block;
+} */
+
+.group{
+  margin: 0 15px;
+  float:left;
+}
+
+.group1 {
+  background-color: violet;
+  width: 250px;
+}
+
+.group2 {
+  background-color: salmon;
+  width: 300px;
+}
+
+.group3 {
+  background-color: gold;
+  width: 100px;
+}
+
+/* 슬로건 */
+.slogan {
+  margin-top: 150px;
+  background: skyblue;
   height: 10vh;
-}
-.footer{
-  background: rgb(138, 138, 138);
+  clear: both;
 }
 
-.footer-inner{
-  background: rgb(244, 244, 244);
+/* 푸터 */
+.footer {
+  background: gray;
+}
+
+.footer-inner {
+  background: silver;
   height: 15vh;
+  width: 500px;
+  overflow: hidden;
 }
-
