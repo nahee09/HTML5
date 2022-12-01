@@ -1,6 +1,7 @@
-@import url(./reset.css);
 @import url(./normalize.css);/*파일 가져오기, 맨 처음에 넣어야 함*/
 /*normalize.css에 body{margin: 0;}이 담겨있기에 가장자리 여백이 사라짐*/
+@import url(./reset.css);
+
 
 body{
   /*font setting(pretendard)*/
@@ -9,19 +10,38 @@ body{
   background: rgb(248, 248, 230);
 }
 
+/*레이아웃*//*selector 그룹핑*/
+.header, .visual, .main, .slogan, .footer-inner{
+  width: 940px;
+  box-sizing: border-box;
+  margin: 0 auto; /*마치 중앙 정렬이 된 것 같은. 이동한 것이 아니라 크기가 커진 거임*/
+  /*margin: 0 0 0 auto; 마치 오른쪽 정렬이 된 것 같은. 그냥 크기가 커진 거임*/
+  
+}
+
 .header{
   background: rgb(254, 130, 151);
+  height: 15vh;
+  padding: 0 30px; /*좌 우*/ 
 }
 .visual{
   background: orange;
+  height: 10vh;
 }
 .main{
   background: #7ec581;
+  height: 50vh;
 }
 .slogan{
   background: #4EC5F1;
+  height: 10vh;
 }
 .footer{
   background: rgb(138, 138, 138);
+}
+
+.footer-inner{
+  background: rgb(244, 244, 244);
+  height: 15vh;
 }
 
