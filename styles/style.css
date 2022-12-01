@@ -1,1 +1,27 @@
-/* CSS 스타일 */
+@import url(./reset.css);
+@import url(./normalize.css);/*파일 가져오기, 맨 처음에 넣어야 함*/
+/*normalize.css에 body{margin: 0;}이 담겨있기에 가장자리 여백이 사라짐*/
+
+body{
+  /*font setting(pretendard)*/
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  /*body가 기본 여백 8px이어서 가장자리에 여백이 생김. 하지만 위에 import함으로써 없앰.*/
+  background: rgb(248, 248, 230);
+}
+
+.header{
+  background: rgb(254, 130, 151);
+}
+.visual{
+  background: orange;
+}
+.main{
+  background: #7ec581;
+}
+.slogan{
+  background: #4EC5F1;
+}
+.footer{
+  background: rgb(138, 138, 138);
+}
+
