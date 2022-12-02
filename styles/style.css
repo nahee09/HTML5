@@ -4,7 +4,7 @@
 
 /* 기본 스타일 */
 *, *::before, *::after{
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*본문 스타일*/
