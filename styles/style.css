@@ -40,11 +40,8 @@ body{
 .main{
   background: #7ec581;
   height: 50vh;
-}
-
-.group{
-  margin: 0 15px;
-  float: left;
+  display: flex;
+  flex-direction: row;
 }
 
 .group1{
