@@ -39,9 +39,14 @@ body{
 /*메인*/
 .main{
   background: #7ec581;
-  height: 50vh;
+  min-height: 450px;/*내용이 적더라도 최소 이 정도는 유지하도록*/
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap; /*아래 두 줄을 한 꺼번에*/
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; 디폴트는 nowrap */
+  justify-content: space-between;
+  padding: 30px;
+  align-items: flex-start;
 }
 
 .group1{
@@ -51,12 +56,13 @@ body{
 
 .group2{
   background-color: rgb(234, 0, 255);
-  width: 380px; 
+  width: 380px;
 }
 
 .group3{
   background-color: rgb(154, 255, 67);
   width: 190px;
+  /* flex-grow: 1; */
 }
 
 /*슬로건*/
