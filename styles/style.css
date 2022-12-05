@@ -1,83 +1,127 @@
-@import url(./normalize.css);/*파일 가져오기, 맨 처음에 넣어야 함*/
-/*normalize.css에 body{margin: 0;}이 담겨있기에 가장자리 여백이 사라짐*/
+@import url(./normalize.css);
 @import url(./reset.css);
+@import url(../css/fontello.css);
 
 /* 기본 스타일 */
-*, *::before, *::after{
-box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/*본문 스타일*/
-body{
-  background: rgb(248, 248, 230);
-  /*웹폰트 적용(pretendard)*/
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  font-weight: 500;
+/* 본문 스타일 */
+body {
+  background: #ffc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-/*레이아웃*//*selector 그룹핑*/
-.header, .visual, .main, .slogan, .footer-inner{
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
-  /*border의 크기를 width와 height의 값으로 사용할 수 있게 함(원래 width는 content기준)*/
-  margin: 0 auto; /*마치 중앙 정렬이 된 것 같은. 이동한 것이 아니라 크기가 커진 거임*/
-  /*margin: 0 0 0 auto; 마치 오른쪽 정렬이 된 것 같은. 그냥 크기가 커진 거임*/
+  margin: 0 auto;
 }
 
-/*헤더*/
-.header{
-  background: rgb(254, 130, 151);
-  padding: 0 30px; /*세로 가로*/
+/* 헤더 */
+.header {
+  background: #fff;
+  padding: 0 30px;
   height: 15vh;
+  border-radius: 0 0 15px 15px;
 }
 
-/*비주얼*/
-.visual{
+.member {
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap; /*그냥 코드에서 확인하려고 명시해주시는 편*/
+  justify-content: flex-end;
+}
+
+/* .member li::before {
+  content: ":";
+}
+
+ /* .member .first::before{
+  content:"";
+} */
+
+/* .member li:first-child::before{
+  content:"";
+} */ 
+/* 
+.member li:nth-child(n+2)::before{
+  content: ":";
+  background-color: skyblue;
+} */
+
+/* .member li::before{
+  content: "\e800";
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}  */
+
+
+/* 비주얼 */
+.visual {
   background: orange;
   height: 10vh;
 }
-
-/*메인*/
-.main{
-  background: #7ec581;
-  min-height: 450px;/*내용이 적더라도 최소 이 정도는 유지하도록*/
-  display: flex;
-  flex-flow: row nowrap; /*아래 두 줄을 한 꺼번에*/
-  /* flex-direction: row; */
-  /* flex-wrap: nowrap; 디폴트는 nowrap */
-  justify-content: space-between;
-  padding: 30px;
-  align-items: flex-start;
+/* 메인 */
+.main {
+  background: lightgreen;
+  border-top: 1px solid red;
+  /* min-height: 450px; */
+  position: absolute;
 }
 
-.group1{
-  background-color: aqua; 
+.group {
+  height: 100px;
+}
+.group1 {
+  background-color: violet;
   width: 250px;
+  float: right;
 }
 
-.group2{
-  background-color: rgb(234, 0, 255);
+.group2 {
+  background-color: salmon;
   width: 380px;
+  float: right;
 }
-
-.group3{
-  background-color: rgb(154, 255, 67);
+.group3 {
+  background-color: gold;
   width: 190px;
-  /* flex-grow: 1; */
+  float: right;
 }
 
-/*슬로건*/
-.slogan{
-  background: #4EC5F1;
+/* 슬로건 */
+.slogan {
+  background: skyblue;
   height: 10vh;
   clear: both;
 }
-
-/*푸터*/
-.footer{
-  background: rgb(138, 138, 138);
+/* 푸터 */
+.footer {
+  background: gray;
+  width: 940px;
+  margin: 0 auto;
 }
-
-.footer-inner{
-  background: rgb(234, 234, 234);
+.footer-inner {
+  background: silver;
   height: 15vh;
+  position: relative;
+  top: -10px;
+  left: -10px;
 }
