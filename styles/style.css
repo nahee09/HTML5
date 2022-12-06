@@ -104,9 +104,38 @@ body{
   padding-bottom: 80px;
 }
 .menu{
+  border-top: 2px solid; 
+  border-radius: 0 0 5px 5px;
   background-color: rgb(202, 65, 53);
   background-image: linear-gradient(orange, orangered, orange);
-  
+  /* display: flow-root; height 고정값을 줬기 때문에 필요 없음*/
+  padding-left:230px;
+  height: 47px;
+}
+
+.menu-item{
+  /* background-color: rgb(187, 185, 253); */
+  float: left; 
+  border-left: 2px solid white;
+}
+
+.menu-button{
+  border: 0;
+  background: transparent;
+  padding:0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  /*쉐도우를 더 두껍게 만들려면 여러번 쓰기*/
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black; 
+}
+
+.sub-menu{
+  background-color: red;
+  position: absolute;
+  display: none;
+  padding-left: 50px;
 }
 
 /*비주얼*/
