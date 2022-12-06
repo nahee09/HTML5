@@ -2,9 +2,20 @@
 /*normalize.css에 body{margin: 0;}이 담겨있기에 가장자리 여백이 사라짐*/
 @import url(./reset.css);
 
-/* 기본 스타일 */
+/*숨김 콘텐츠*/
+.a11y-hidden{
+  background-color: yellow;
+  position: absolute;
+  top: -9999em; /*화면 밖으로 내보낼라고 큰 숫자 사용(숨김), em은 상속받아서 단위가 더 커서 em씀.*/
+}
+
+/*기본 스타일*/
 *, *::before, *::after{
   box-sizing: border-box;
+}
+
+html{
+  font-size: 10px; /*계산을 쉽게 하려고 걍 10px 준 것*/
 }
 
 /*링크 스타일*/
@@ -13,16 +24,10 @@ a{
   text-decoration: none;
 }
 
-a:link{
-
-}
-
-a:visited{
-
-}
-
 /*본문 스타일*/
 body{
+  /*em, rem 단위 사용해보기*/
+  font-size: 1.4rem;
   color: #181818;
   background: #ccc;
   /*웹폰트 적용(pretendard)*/
@@ -42,7 +47,6 @@ body{
 .header{
   background: #fff;
   padding: 0 30px; /*세로 가로*/
-  height: 15vh;
   border-radius: 0 0 15px 15px; /*x축/y축*/
   position: relative;
 }
@@ -57,10 +61,15 @@ body{
 
 /*텍스트 링크 모음*/
 .member{
-  /* background-color: rgb(170, 146, 255); */
   text-align: right;
   /* font-size: 0; */
   padding: 4px 0;
+  /* 1. position 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기*/
+  /* position: relative;
+  right: -10px; */
+  /* 2. transform 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기*/
+  transform: translateX(10px);
+  /* 3. margin도 고민해보삼 */
 }
 
 .member li{
@@ -70,10 +79,15 @@ body{
 }
 
 .member a{
-  background-color: coral;
   padding: 6px 10px;
   display: inherit;
+  text-transform: uppercase;
 }
+
+/* 마지막 li 요소에 포함된 a 요소를 선택하여 오른쪽 padding값을 0으로 재정의*/
+/* .member li:last-child a{
+  padding-right: 0;
+} */
 
 .divider{
   margin-right: 4px;
@@ -91,6 +105,8 @@ body{
 .main{
   background: #7ec581;
   height: 50vh;
+  display: flow-root;
+  padding: 0 15px;
 }
 
 .group{
