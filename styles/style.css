@@ -113,12 +113,17 @@ body{
   height: 47px;
 }
 
+.menu li{ /*메인 메뉴와 서브 메뉴를 가로배치 한 꺼번에 하기 위함.*/
+  float: left;
+}
+
 .menu-item{
   /* background-color: rgb(187, 185, 253); */
-  float: left; 
+  /* float: left;  */
   border-left: 2px solid white;
 }
 
+/*구체성 점수-> 10점*/
 .menu-button{
   border: 0;
   background: transparent;
@@ -131,11 +136,26 @@ body{
   text-shadow: 1px 1px 0 black, -1px -1px 0 black; 
 }
 
+/*구체성 점수 -> 20점 */
+.is-active .menu-button{
+  color:yellow;
+}
+
+.is-active .menu-button::after{ /*::after는 .menu-button의 형제노드가 생기는 것(가상)*/
+  content: "";
+  display: block;
+  border-top: 2px solid #212121;
+}
+
 .sub-menu{
   background-color: red;
-  position: absolute;
-  display: none;
-  padding-left: 50px;
+  position: absolute; 
+  display: none; 
+}
+
+.is-active .sub-menu{
+  display: block;
+
 }
 
 /*비주얼*/
