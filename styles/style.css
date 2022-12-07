@@ -210,11 +210,44 @@ body {
   padding: 6px 0;
 }
 
+
 /* 비주얼 */
+/*@는 at sign rule*/
+@keyframes moveEffect{ /*키프레임 선언(위치는 상관 없음)*/
+  0%{
+    font-size: 12px;
+    color: rgba(0,0,0,0.2);
+    /* top: 0;
+    left: 0; */
+    transform: translate(0, 0);
+  }
+  100%{
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    /* top: 75px;
+    left: 400px; */
+    transform: translate(400px, 75px);
+  }
+}
+
+
+
 .visual {
   background: orange;
-  height: 10vh;
+  height: 120px;
+  position: relative;
 }
+
+.visual-text{
+  background-color: rgb(61, 214, 158);
+  /*애니메이션 적용*/
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;/*원래 크기로 돌아가지 않도록*/
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  display: inline-block;/*이걸 넣어줘야 박스자체가 안 튀어나감*/
+}
+
 /* 메인 */
 .main {
   background: lightgreen;
