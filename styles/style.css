@@ -99,7 +99,7 @@ body {
 
 /* 메인 메뉴 */
 .navigation {
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .menu {
@@ -154,7 +154,7 @@ body {
   position: absolute;
   top: 47px;
   display: none;
-  padding: 4px 0;
+  padding: 4px 0;   
 }
 
 .menu-html,
