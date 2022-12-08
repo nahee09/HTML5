@@ -313,6 +313,11 @@ body {
   background-color: violet;
   width: 250px;
 }
+
+.login-title{
+  color:yellow;
+}
+
 .group2 {
   background-color: salmon;
   width: 380px;
