@@ -217,6 +217,7 @@ body {
   0%{
     font-size: 12px;
     color: rgba(0,0,0,0.2);
+    /* color: hsla(0,0%,0%,0); */
     /* top: 0;
     left: 0; */
     transform: translate(0, 0);
@@ -224,6 +225,7 @@ body {
   100%{
     font-size: 24px;
     color: rgba(0,0,0,1);
+    /* color: hsla(0,0%,0%,1); */
     /* top: 75px;
     left: 400px; */
     transform: translate(400px, 75px);
@@ -243,9 +245,11 @@ body {
   /*애니메이션 적용*/
   animation-name: moveEffect;
   animation-duration: 2000ms;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;/*원래 크기로 돌아가지 않도록*/
   font-family:Georgia, 'Times New Roman', Times, serif;
-  display: inline-block;/*이걸 넣어줘야 박스자체가 안 튀어나감*/
+  display: inline-block;/*방법1 이걸 넣어줘야 박스자체가 가로로 안 튀어나감*/
+  /* position:absolute; 방법2 */
 }
 
 /* 메인 */
