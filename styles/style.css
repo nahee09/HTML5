@@ -33,12 +33,19 @@ body {
   /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
-  background: #ccc
-    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    /*bg image 콤마로 구분해서 여러 개 가능, repeat과 position도 마찬가지*/
+    /* background-color: #ccc;
+    background-image: url("./images/bg_flower.png"), 
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 0, 0 0; */
+    /*위 bg코드를 단축 속성으로 쓰는 법*/
+    background: url("./images/bg_flower.png") no-repeat 50% 0, 
+    #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%) repeat 0 0;
 }
 
 /* 레이아웃 */
@@ -53,7 +60,7 @@ body {
 
 /* 헤더 */
 .header {
-  background: #fff;
+  /* background: #fff; */
   padding: 0 30px;
   border-radius: 0 0 15px 15px;
   position: relative;
@@ -232,24 +239,61 @@ body {
   }
 }
 
-
+@keyframes fadeEffect{ /*꽃 투명도*/
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 
 .visual {
-  background: orange;
+  /* background: orange; */
   height: 120px;
-  position: relative;
+  position: relative;/**/
+}
+
+.visual::before, .visual::after{
+  content:"";
+  position:absolute;
+  width: 100%;
+  height: 100%; 
+  top: 0;
+  left: 0;
+  /* animation-name: fadeEffect;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+  /*위 animation을 아래처럼 축약 가능*/
+  animation: fadeEffect 4000ms infinite alternate;
+}
+
+.visual::before{
+    /* background-color: yellow; */
+    background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
+    url("./images/ani_flower_02.png") no-repeat 600px 0;
+    animation-delay: 1000ms;
+}
+
+.visual::after{
+  /* background-color: green; */
+  background: url("./images/ani_flower_04.png") no-repeat 800px 0,
+  url("./images/ani_flower_03.png") no-repeat 300px 0;
 }
 
 .visual-text{
-  background-color: rgb(61, 214, 158);
+  /* background-color: rgb(61, 214, 158); */
   /*애니메이션 적용*/
-  animation-name: moveEffect;
-  animation-duration: 2000ms;
+  /* animation-name: moveEffect;
+  animation-duration: 400ms;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;/*원래 크기로 돌아가지 않도록*/
+  animation-fill-mode: forwards;원래 크기로 돌아가지 않도록 */
+  animation: moveEffect 400ms ease-in-out forwards;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  display: inline-block;/*방법1 이걸 넣어줘야 박스자체가 가로로 안 튀어나감*/
-  /* position:absolute; 방법2 */
+  /* display: inline-block;방법1 이걸 넣어줘야 박스자체가 가로로 안 튀어나감 */
+  position:absolute; /*방법2*/
+  z-index: 1;
 }
 
 /* 메인 */
