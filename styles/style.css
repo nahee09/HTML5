@@ -3,7 +3,7 @@
 @import url(./reset.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden, legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -325,6 +325,7 @@ body {
 
 /*로그인*/ 
 .login{
+  /*아래 bg에 최소한의 배경을 표현하기 위해 gradient 전에 orange 넣어주는 것(gradient가 적용이 안 됐을 때를 대비)*/
   background: orange radial-gradient(circle at right top, orange, orangered);
   border-radius: 5px; 
   box-shadow: 5px 5px 0 0 #ccc;
@@ -332,19 +333,67 @@ body {
 }
 
 .login-title{
+  /* background-color: skyblue; */
   color:yellow;
   font-size: 15px;
-  font-weight: bold;
-  text-indent: 2px;
+  font-weight: 700;/*700이 bold*/
+  /*들여쓰기 속성(padding, margin 써도 됨 단지 이런 것도 있다는 것)*/
+  text-indent: 10px; 
 }
 
-.form{
+.login-form{
   background-color: #fff;
-  border-top-right-radius: 15px;
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset{
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.user-email, .user-pw{
+  /* background-color: red; */
+  margin-bottom: 5px;
+}
+
+.login-form label{
+  /* background-color: green; */
+  display: inline-block;
+  width: 4em;
+}
+
+.login-form input{
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa; 
+  padding: 1px 1px 1px 5px;
+  border-radius: 3px;
+}
+
+.login-button{
+  background-color: orangered;
+  position:absolute;
+  top: 0px;
+  right: 0px;
+  height: 53px;
+  color:white;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 8px;
+  font-size: 13px;
 }
 
 .sign{
   background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px; 
+  display: flex; 
+  justify-content: space-between;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 /* 슬로건 */
