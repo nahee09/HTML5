@@ -421,6 +421,36 @@ body {
   letter-spacing: -1px; /*자간 조정*/
 }
 
+/*유효성 검사 배너*/ 
+.validation-list{
+  /* background-color: yellow; */
+  margin-top: 25px;
+}
+
+/* .validation-list a::before{
+  content: url("./images/validation_icon.png");
+  vertical-align: middle;
+} */
+
+.validation-list li{
+  margin-top: 10px;
+}
+
+.validation-list a{
+  border: 1px solid rgb(162, 162, 162);
+  border-radius: 30px;
+  height: 40px;
+  padding: 30px 50px;
+  background: url("./images/validation_icon.png") no-repeat 25px 50%,
+   #ccc linear-gradient(to bottom ,#ccc, #eee);
+  display: block;
+}
+
+.validation-list a:hover,
+.validation-list a:focus {
+  color: red;
+}
+
 /* 슬로건 */
 .slogan {
   background: skyblue;
