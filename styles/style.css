@@ -1,9 +1,10 @@
-@import url(../css/fonts.css);
+@import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden, legend {
+.a11y-hidden,
+legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -30,22 +31,15 @@ a {
 
 /* 본문 스타일 */
 body {
-  /* em, rem 단위를 사용해보기 */
-  font-size: 1.4rem;
   color: #212121;
+  font-size: 1.4rem;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    /*bg image 콤마로 구분해서 여러 개 가능, repeat과 position도 마찬가지*/
-    /* background-color: #ccc;
-    background-image: url("./images/bg_flower.png"), 
-    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
-    background-repeat: no-repeat, repeat;
-    background-position: 50% 0, 0 0; */
-    /*위 bg코드를 단축 속성으로 쓰는 법*/
-    background: url("./images/bg_flower.png") no-repeat 50% 0, 
-    #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%) repeat 0 0;
+  background: url("./images/bg_flower.png") no-repeat 50% 0,
+    #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%)
+      repeat 0 0;
 }
 
 /* 레이아웃 */
@@ -60,7 +54,7 @@ body {
 
 /* 헤더 */
 .header {
-  /* background: #fff; */
+  background: #fff;
   padding: 0 30px;
   border-radius: 0 0 15px 15px;
   position: relative;
@@ -161,7 +155,7 @@ body {
   position: absolute;
   top: 47px;
   display: none;
-  padding: 4px 0;   
+  padding: 4px 0;
 }
 
 .menu-html,
@@ -187,17 +181,17 @@ body {
 
 .sub-menu a::before {
   content: "\e805";
-  font-family: 'fontello';
+  font-family: "fontello";
   font-weight: normal;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: .2em;
+  margin-right: 0.2em;
   text-align: center;
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
-  margin-left: .2em;
+  margin-left: 0.2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -207,100 +201,79 @@ body {
   content: "\e801";
 }
 
-.sub-menu a:hover,
-.sub-menu a:focus{
-  color: red;
-}
-
-.sub-menu a{
+.sub-menu a {
   display: inline-block;
   padding: 6px 0;
 }
 
+.sub-menu a:hover,
+.sub-menu a:focus {
+  color: #f00;
+}
 
 /* 비주얼 */
-/*@는 at sign rule*/
-@keyframes moveEffect{ /*키프레임 선언(위치는 상관 없음)*/
-  0%{
+@keyframes moveEffect {
+  0% {
     font-size: 12px;
-    color: rgba(0,0,0,0.2);
-    /* color: hsla(0,0%,0%,0); */
-    /* top: 0;
-    left: 0; */
+    color: hsla(0, 0%, 0%, 0);
     transform: translate(0, 0);
   }
-  100%{
+
+  100% {
     font-size: 24px;
-    color: rgba(0,0,0,1);
-    /* color: hsla(0,0%,0%,1); */
-    /* top: 75px;
-    left: 400px; */
+    color: hsla(0, 0%, 0%, 1);
     transform: translate(400px, 75px);
   }
 }
 
-@keyframes fadeEffect{ /*꽃 투명도*/
-  0%{
+@keyframes fadeEffect {
+  0% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }
 
 .visual {
-  /* background: orange; */
   height: 120px;
-  position: relative;/**/
+  position: relative;
 }
 
-.visual::before, .visual::after{
-  content:"";
-  position:absolute;
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   top: 0;
   left: 0;
-  /* animation-name: fadeEffect;
-  animation-duration: 4000ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
-  /*위 animation을 아래처럼 축약 가능*/
-  animation: fadeEffect 4000ms infinite alternate;
+  animation: fadeEffect 2000ms infinite alternate;
 }
 
-.visual::before{
-    /* background-color: yellow; */
-    background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
+.visual::before {
+  background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
     url("./images/ani_flower_02.png") no-repeat 600px 0;
-    animation-delay: 1000ms;
 }
 
-.visual::after{
-  /* background-color: green; */
-  background: url("./images/ani_flower_04.png") no-repeat 800px 0,
-  url("./images/ani_flower_03.png") no-repeat 300px 0;
+.visual::after {
+  background: url("./images/ani_flower_03.png") no-repeat 300px 0,
+    url("./images/ani_flower_04.png") no-repeat 800px 0;
+  animation-delay: 1000ms;
 }
 
-.visual-text{
-  /* background-color: rgb(61, 214, 158); */
-  /*애니메이션 적용*/
-  /* animation-name: moveEffect;
-  animation-duration: 400ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;원래 크기로 돌아가지 않도록 */
+.visual-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
   animation: moveEffect 400ms ease-in-out forwards;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  /* display: inline-block;방법1 이걸 넣어줘야 박스자체가 가로로 안 튀어나감 */
-  position:absolute; /*방법2*/
+  position: relative;
   z-index: 1;
 }
 
 /* 메인 */
 .main {
+  display: flow-root;
   background: #fff;
   min-height: 450px;
-  display: flow-root;
   padding: 30px 15px;
   border-radius: 15px 15px 0 0;
 }
@@ -318,137 +291,117 @@ body {
   background-color: salmon;
   width: 380px;
 }
+
 .group3 {
   background-color: gold;
   width: 190px;
 }
 
-/*로그인*/ 
-.login{
-  /*아래 bg에 최소한의 배경을 표현하기 위해 gradient 전에 orange 넣어주는 것(gradient가 적용이 안 됐을 때를 대비)*/
-  background: orange radial-gradient(circle at right top, orange, orangered);
-  border-radius: 5px; 
+/* 로그인 */
+.login {
   box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
   padding: 10px;
+  border-radius: 5px;
 }
 
-.login-title{
-  /* background-color: skyblue; */
-  color:yellow;
+.login-title {
+  color: #ff0;
   font-size: 15px;
-  font-weight: 700;/*700이 bold*/
-  /*들여쓰기 속성(padding, margin 써도 됨 단지 이런 것도 있다는 것)*/
-  text-indent: 10px; 
+  font-weight: 700;
+  text-indent: 10px;
 }
 
-.login-form{
+.login-form {
   background-color: #fff;
-  border-radius: 5px 5px 0 0;
   margin-top: 10px;
+  border-radius: 5px 5px 0 0;
   padding: 10px 10px 0 10px;
 }
 
-.login-form fieldset{
+.login-form fieldset {
   position: relative;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #aaa;
   padding-bottom: 5px;
 }
 
-.user-email, .user-pw{
-  /* background-color: red; */
+.user-email,
+.user-pw {
   margin-bottom: 5px;
 }
 
-.login-form label{
-  /* background-color: green; */
+.login-form label {
   display: inline-block;
   width: 4em;
 }
 
-.login-form input{
+.login-form input {
   width: 90px;
   height: 24px;
-  border: 1px solid #aaa; 
+  border: 1px solid #aaa;
   padding: 1px 1px 1px 5px;
   border-radius: 3px;
 }
 
-.login-button{
-  background-color: orangered;
-  position:absolute;
-  top: 0px;
-  right: 0px;
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 53px;
-  color:white;
+  background-color: orangered;
+  color: #fff;
   border: 0;
-  border-radius: 3px;
   padding: 0 8px;
+  border-radius: 5px;
   font-size: 13px;
 }
 
-.sign a::before{
-  content: "\e804";
-  font-family: 'fontello';
-  color:coral;
-  padding: 6px 0;
-  margin-right: 8px;
-}
-
-.sign a:hover::before,
-.sign a:focus::before {
-  content: "\e801";
-}
-
-.sign a:hover,
-.sign a:focus {
-  color: red;
-}
-
-.sign{
+.sign {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 4px 10px; 
-  display: flex; 
-  flex-flow: row nowrap;/*안 써도 되지만, 명시해서 흐름 파악하려고.*/
-  justify-content: space-between;
-  font-size: 12px;
-  padding-top: 5px;
+  padding: 4px 10px;
+}
+.sign li {
+  display: inline-block;
 }
 
-.sign a{
-  display: block;
+.sign li:first-child {
+  margin-right: 16px;
+}
+
+.sign a {
+  display: inline-block;
   padding: 6px 0;
-  letter-spacing: -1px; /*자간 조정*/
+  letter-spacing: -1px;
 }
 
-/*유효성 검사 배너*/ 
-.validation-list{
-  /* background-color: yellow; */
+.sign a::before {
+  color: orangered;
+}
+
+/* 유효성 검사 배너 */
+.validation-list {
   margin-top: 25px;
 }
 
-/* .validation-list a::before{
-  content: url("./images/validation_icon.png");
-  vertical-align: middle;
-} */
-
-.validation-list li{
+.validation-list li {
   margin-top: 10px;
 }
 
-.validation-list a{
-  border: 1px solid rgb(162, 162, 162);
-  border-radius: 30px;
-  height: 40px;
-  padding: 30px 50px;
+.validation-list a {
   background: url("./images/validation_icon.png") no-repeat 25px 50%,
-   #ccc linear-gradient(to bottom ,#ccc, #eee);
+    #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 0 15px 0 55px;
+  border-radius: 30px;
+  line-height: 30px;
+  border: 1px solid #aaa;
+  cursor: pointer;
   display: block;
 }
 
 .validation-list a:hover,
 .validation-list a:focus {
-  color: red;
+  color: #f00;
 }
 
 /* 슬로건 */
