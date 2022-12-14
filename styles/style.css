@@ -823,15 +823,94 @@ body {
 
 /* 슬로건 */
 .slogan {
-  background: skyblue;
   clear: both;
+  position: relative;
+  padding: 15px 100px 15px 180px;
 }
+
+.slogan-title {
+  width: 110px;
+  height: 83px;
+  line-height: 83px;
+  text-align: center;
+  position: absolute;
+  bottom: -25px;
+  left: 35px;
+}
+
+.slogan-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/coffee.png") no-repeat 0 0;
+}
+
+.slogan-content {
+  color: #a09784;
+}
+
+.slogan-content q::before {
+  
+}
+.slogan-content q::after {
+  content: "";
+}
+
 /* 푸터 */
 .footer {
   background: #ccc
     linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 .footer-inner {
-  background: silver;
-  height: 15vh;
+  /* background-color: pink; */
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
+.footer-logo{
+  /* background-color: orange; */
+  padding: 25px 0px 0px 10px;
+}
+
+.footer-inner-wrapper{
+  /* background-color: yellow; */
+  margin: 0px 20px 0 40px;
+}
+
+.badge-container{
+  /* background-color: skyblue; */
+  display: flex; 
+  height: 60px;
+  gap: 5px;
+}
+
+.guide-list{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(118, 118, 118);
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px;
+  width: 650px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.guide-list li{
+  font-size: 1.4rem;
+  padding: 5px 10px;
+}
+
+.address{
+  margin-bottom: 5px;
+}
+
+
+
+
