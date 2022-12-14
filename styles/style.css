@@ -740,11 +740,90 @@ body {
   font-weight: 700;
 }
 
+.margin-top-default{
+  margin-top: 20px;
+}
+
+.margin-top-thin{
+  margin-top: 5px;
+}
+
+.margin-top-normal{
+  margin-top: 10px;
+}
+
+.margin-top-large{
+  margin-top: 15px; 
+}
+
+/*인기 사이트*/ 
+.favorite-list li::before{
+  background-color: #aaa;
+  content: counter(num); 
+  color: #fff; 
+  font-size: 1.2rem; 
+  margin-right: 5px; 
+  border-radius: 3px;
+  display: inline-block;
+  width: 1.7rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.favorite-list li{
+  margin-top: 10px;
+  counter-increment: num; /*num은 내가 정한 이름*/ 
+  background-color: rgb(228, 228, 162);
+  position: relative;
+}
+
+.favorite-list a{
+  background-color: aqua;
+  /* flex-grow:1; */
+}
+
+.favorite-list{
+  background-color: yellow;
+  list-style: none; /*스크린 리더가 읽지 않음*/
+  position: relative; 
+}
+
+.favorite{
+  background-color: pink;
+  position: relative;
+}
+
+.up, .down, .stop{
+  width: 20px;
+  height: 11px;
+  background: lime url(../css/images/rank.png) no-repeat 100% 0;
+  position: absolute; 
+  top: 50%; 
+  right: 0; 
+  margin-top: -6px;
+  margin-left: auto;
+}
+
+.down{
+  background-position: 100% 100%;
+}
+
+.stop{
+  background-position: 100% 50%; 
+}
+
+.favorite-more{
+  background-color: skyblue;
+  position:absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px; 
+}
+
 
 /* 슬로건 */
 .slogan {
   background: skyblue;
-  height: 10vh;
   clear: both;
 }
 /* 푸터 */
