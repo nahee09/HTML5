@@ -514,10 +514,11 @@ body {
 /* 공지사항 및 자료실 */
 .board {
   margin-top: 20px;
+  /* display: flex;  */
   position: relative;
 }
 
-.tab-list {
+.tab-list{
   display: flex;
   flex-flow: row nowrap;
 }
@@ -530,9 +531,9 @@ body {
   color: #666;
 }
 
-.is-select.tab {
+.is-select.tab{
+  color: orangered;
   background-color: #fff;
-  color: #e85e2c;
   border-color: currentColor currentColor #fff currentColor;
 }
 
@@ -542,38 +543,258 @@ body {
 }
 
 .is-select.tab-panel {
+  /* background-color: green; */
   display: block;
 }
 
-.board-list li {
+.is-select.tab-panel li{
+  /* background-color: pink; */
   margin-top: 10px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
-.board-list a {
-  flex-grow: 1;
+.is-select.tab-panel a{
+  flex-grow: 1; 
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; 
   text-overflow: ellipsis;
 }
 
-.board-list time {
+.is-select.tab-panel time{
+  /* background-color: orange; */
   flex-shrink: 0;
   margin-left: 10px;
 }
 
-.board-more {
+.board-more{
+  /* background-color: skyblue; */
+  position: absolute;
+  top: -8px; 
+  right: -8px;
+  padding: 8px;
+}
+
+/* 새소식 */
+.news {
+  margin-top: 20px;
+  position: relative;
+}
+
+.news::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa linear-gradient(to right, #ccc, #fff);
+}
+
+.news-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.news-link {
+  display: block;
+}
+
+.news-item {
+  margin-top: 35px;
+  padding-left: 130px;
+  position: relative;
+}
+
+.news-item-title {
+  font-weight: 500;
+}
+
+.news-item-date {
+  display: block;
+  margin: 5px 0 10px;
+}
+
+.news-item-brief {
+  line-height: 1.5;
+}
+
+.news-item-thumbnail {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  text-align: center;
+}
+
+.news-item-thumbnail img{
+  box-shadow: 0 15px 10px 5px #ccc;
+  margin-bottom: 15px;
+}
+
+.news-more {
   position: absolute;
   top: -8px;
   right: -8px;
   padding: 8px;
 }
 
-.icon-plus::before {
-  color: hsla(110, 50%, 30%, 1);
+/* 신규 이벤트 및 관련 사이트 */
+
+.event {
+  border-bottom: 1px solid #aaa;
 }
+
+.event-title {
+  display: inline-block;
+}
+
+.event-button-wrapper {
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5px;
+  float: right;
+}
+
+/* IR 기법 -> Image Replacement */
+.event-button {
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 18px 0 0 0;
+  background: url(./images/back_forward.png) no-repeat;
+}
+
+.event-button-next {
+  background-position: -36px 0;
+}
+
+.event-button:focus {
+  outline-offset: -2px;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+
+.related {
+  margin-top: 10px;
+}
+
+.related-list {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 27px;
+  overflow: hidden;
+  transition: height 400ms 0ms, padding 400ms 400ms;
+}
+
+.related-list li {
+  height: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.related-list a {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.related-list:hover,
+.related-list:focus {
+  height: 147px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.gradient-effect{
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.accent-color{
+  color: #e85e2c;
+}
+
+.text-xl{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/*인기 사이트*/ 
+.favorite{
+  /* background-color: pink; */
+  position: relative;
+}
+
+.favorite-list{
+
+}
+
+.favorite-list li::before{
+  background-color: rgb(178, 178, 178);
+  content: "1";
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  margin-right: 3px;
+}
+
+.favorite-list li{
+  /* background-color: yellow; */
+  list-style: none;
+  margin-top: 5px;
+}
+
+.favorite-list em::before{
+  content: url(../css/images/rank.png);
+  background-color: lightblue;
+}
+
+.favorite-list em{
+  /* background-color: red; */
+  height: 20px;
+  float: right; 
+  overflow:hidden;
+}
+
+.favorite-list down{
+  position:absolute;
+  top: 10px;
+}
+
+.favorite-more{
+  /* background-color: lime; */
+  position: absolute;
+  top: -8px;
+  right: -8px; 
+  padding: 8px;
+}
+
 
 /* 슬로건 */
 .slogan {
